@@ -24,11 +24,7 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  let mean = sum / numbers.length;
+  let mean = getSum(numbers) / getLength(numbers);
   return mean;
 }
 
@@ -65,19 +61,8 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  let max = 0;
-  for (let element of numbers) {
-    if (max < element) {
-      max = element;
-    }
-  }
-
-  let min = 0;
-  for (let element of numbers) {
-    if (min > element) {
-      min = element;
-    }
-  }
+  let max = getMax(numbers);
+  let min = getMin(numbers);
   return `(${min} - ${max})`;
 }
 
